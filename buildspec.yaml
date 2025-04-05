@@ -9,9 +9,9 @@ phases:
       - docker build -t bank-prediction .
       - docker tag bank-prediction:latest 691580494714.dkr.ecr.eu-north-1.amazonaws.com/bank-prediction:latest
   post_build:
-  commands:
-    - docker push 691580494714.dkr.ecr.eu-north-1.amazonaws.com/bank-prediction:latest
-    - echo Writing image definitions file...
-    - printf '[{"name":"bank-prediction","imageUri":"%s"}]' 691580494714.dkr.ecr.eu-north-1.amazonaws.com/bank-prediction:latest > imagedefinitions.json
+    commands:
+      - docker push 691580494714.dkr.ecr.eu-north-1.amazonaws.com/bank-prediction:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"bank-prediction","imageUri":"%s"}]' 505076619770.dkr.ecr.us-east-1.amazonaws.com/bank-prediction :latest > imagedefinitions.json   
 artifacts:
   files: imagedefinitions.json
